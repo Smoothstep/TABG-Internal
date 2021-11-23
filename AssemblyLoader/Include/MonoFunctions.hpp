@@ -1,0 +1,20 @@
+DECL_FN(void, mono_unity_set_vprintf_func, (vprintf_func func))
+DECL_FN(void, mono_trace_set_level_string, (const char *value))
+DECL_FN(void, mono_trace_set_mask_string, (const char *value))
+
+DECL_FN(void, mono_set_commandline_arguments, (int, const char* argv[], const char*))
+DECL_FN(void, mono_jit_parse_options, (int argc, char * argv[]))
+DECL_FN(void, mono_debug_init, (int format))
+
+DECL_FN(MonoDomain *, mono_get_root_domain, ())
+DECL_FN(MonoThread *, mono_thread_attach, (MonoDomain * domain))
+DECL_FN(void, mono_thread_detach, (MonoThread * thread))
+DECL_FN(MonoAssembly *, mono_domain_assembly_open, (MonoDomain * domain, const char *name))
+DECL_FN(MonoImage *, mono_assembly_get_image, (MonoAssembly * assembly))
+DECL_FN(MonoMethodDesc *, mono_method_desc_new, (const char *name, gboolean include_namespace))
+DECL_FN(void, mono_method_desc_free, (MonoMethodDesc * desc))
+DECL_FN(MonoMethod *, mono_method_desc_search_in_image, (MonoMethodDesc * desc, MonoImage *image))
+DECL_FN(MonoObject *, mono_runtime_invoke, (MonoMethod * method, void *obj, void **params, MonoObject **exc))
+DECL_FN(MonoObject *, mono_runtime_invoke_array, (MonoMethod * method, void *obj, void **params, MonoObject **exc))
+DECL_FN(void, mono_install_assembly_load_hook, (MonoAssemblyLoadFunc, void*))
+#undef DECL_FN
